@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+}
+
+#app {
+    max-width: 1250px;
+    min-width: 300px;
+    margin: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.section {
+    width: 100%;
+    margin-bottom: 2px;
+    min-height: 30vh;
+}
+
+.section > h2,
+.section > p {
+    text-align: left;
+    margin: 0;
+    padding: 10;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 100%;
+    margin: 0;
+    background-image: url('https://photos.smugmug.com/Unlisted-Galleries/SmugTrip-2016/n-8wq8br/Yellowstone/i-tCBzK7F/2/X2/DSC07274-X2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 800px) {
+    .header {
+        height: 90vh;
+        max-height: 500px;
+        background-image: url('https://photos.smugmug.com/Unlisted-Galleries/SmugTrip-2016/n-8wq8br/Yellowstone/i-tCBzK7F/2/L/DSC07274-L.jpg');
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .header {
+      max-height: 650px;
+      background-image: url('https://photos.smugmug.com/Unlisted-Galleries/SmugTrip-2016/n-8wq8br/Yellowstone/i-tCBzK7F/2/X2/DSC07274-X2.jpg');
+  }
+}
+
+.header-text {
+    text-align: center;
+    padding: 15;
+    display: inline-block;
+    margin: auto;
+    align-items: center;
+}
+
+.dev-split {
+    display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+}
+
+.left-bar {
+    width: 10vw;
+    min-width: 100px;
+    flex-grow: 1;
+}
+
+.list-item-expanded {
+    padding: 0 20;
+    margin: 8 0;
+    width: 70vw;
+}
+
+.image-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    overflow-x: auto;
+    margin-bottom: 4px;
+}
+
+.image-row::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.image-row::-webkit-scrollbar
+{
+	width: 10px;
+    height: 10px;
+	background-color: #F5F5F5;
+}
+
+.image-row::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+.image-row > * {
+    margin-left: 4px;
+}
+
+.lightbox {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.lightbox > img {
+    max-width: 100%;
+    max-height: 100%;
+}
