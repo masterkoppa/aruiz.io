@@ -27,7 +27,7 @@ export default class DevSection extends React.Component {
                             <ListItem primaryText="Web" value={1} onClick={() => this.setState({selected: 1})}/>
                             <ListItem primaryText="Embeded" value={2} onClick={() => this.setState({selected: 2})}/>
                             <ListItem primaryText="Desktop" value={3} onClick={() => this.setState({selected: 3})}/>
-                            <ListItem primaryText="Mobile" value={4} onClick={() => this.setState({selected: 4})}/>
+                            {/* <ListItem primaryText="Mobile" value={4} onClick={() => this.setState({selected: 4})}/> */}
                         </SelectableList>
                     </div>
                     <ExpandedItem component={selected}/>

@@ -5,5 +5,5 @@ I work every day with PHP, but enjoy working on side projects in Python,
 Ruby, and NodeJS.
 
 Examples:
-- [Personal Site](https://github.com)
+- [Personal Site](https://github.com/masterkoppa/aruiz.io)
 - [React Server Side Renderer](https://github.com/masterkoppa/ReactServerSide)
