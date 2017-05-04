@@ -6,8 +6,7 @@ var APP_DIR = path.resolve(__dirname, 'src/');
 
 var config = {
   entry: {
-      browser: APP_DIR + '/index.jsx',
-      node: APP_DIR + '/static_generator.jsx'
+      browser: APP_DIR + '/index.jsx'
   },
   output: {
     path: BUILD_DIR,
