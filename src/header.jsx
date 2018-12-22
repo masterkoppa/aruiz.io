@@ -1,18 +1,20 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
-import Avatar from 'material-ui/Avatar';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
-export default class Header extends React.Component {
+export default class Header extends React.PureComponent {
     render() {
         return (
             <div className="header section">
-                <Paper className="header-text" zDepth={5}>
-                    {/* <Avatar src="images/uxceo-128.jpg" /> */}
-                    <h1>Andres J Ruiz Torres</h1>
-                    <small>Software Engineer, Photographer, Traveler</small>
+                <Paper className="header-text" elevation={5}>
+                    <Typography variant="display1" gutterBottom>
+                        Andres J Ruiz Torres
+                    </Typography>
+                    <Typography variant="subheading">
+                        Software Engineer, Photographer, Traveler
+                    </Typography>
                 </Paper>
             </div>
         )
-
     }
 }

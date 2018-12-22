@@ -1,36 +1,43 @@
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
 
-import dragscroll from 'dragscroll';
+// import dragscroll from 'dragscroll';
 
 import React from 'react';
 import {render} from 'react-dom';
 import Header from './header.jsx';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import DevSection from './dev.jsx';
-import {blueGrey500, lightGreen500} from 'material-ui/styles/colors'
-import PhotoSection from './photographer.jsx';
-import TravelSection from './travel.jsx';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-let darkCustomTheme = {
-    ...darkBaseTheme
-};
+// import DevSection from './dev.jsx';
+// import {blueGrey500, lightGreen500} from 'material-ui/styles/colors'
+// import PhotoSection from './photographer.jsx';
+// import TravelSection from './travel.jsx';
+
+
+const theme = createMuiTheme({
+    palette: {
+        type: "dark",
+        // primary: {
+        //     main: "#311b92",
+        // },
+        // secondary: {
+        //     main: '#3d5afe',
+        // },
+    },
+});
 
 export default class App extends React.Component {
     render() {
         /* TODO: Tie this theme color to a toggle */
         return (
-            <MuiThemeProvider muiTheme={getMuiTheme(darkCustomTheme)}>
+            <MuiThemeProvider theme={theme}>
+                <CssBaseline/>
                 <div>
                     <Header/>
-                    <DevSection/>
-                    <PhotoSection/>
-                    <TravelSection/>
+                    {/* <DevSection/> */}
+                    {/* <PhotoSection/> */}
+                    {/* <TravelSection/> */}
                 </div>
             </MuiThemeProvider>
         );
