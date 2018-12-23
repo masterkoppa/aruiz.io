@@ -18,7 +18,6 @@ export default class Image extends PureComponent {
     render() {
         let {
             imgSrc,
-            height,
         } = this.props;
 
         if (this.state.lightbox) {
@@ -26,7 +25,7 @@ export default class Image extends PureComponent {
         }
 
         return (
-            <img src={imgSrc} height={height} onClick={this._onClick} />
+            <img src={imgSrc} onClick={this._onClick} />
         );
     }
 }

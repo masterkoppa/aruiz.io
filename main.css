@@ -99,7 +99,22 @@ only screen and (                min-resolution: 2dppx) {
 .image-row > * {
     margin-left: 4px;
 
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+
+    display: block;
+    margin: auto;
+
+    height: 100%;
+    width: 100%;
+    max-height: 220px;
+    max-width: calc(100vw - 20px);
+}
+
+@media (min-width: 960px) {
+    .image-row > * {
+        max-height: 450px;
+        scroll-snap-align: start;
+    }
 }
 
 .lightbox-container {
@@ -112,6 +127,7 @@ only screen and (                min-resolution: 2dppx) {
 .lightbox-image {
     /* Let the image grow to fill most of the screen */
     max-height: calc(100vh - 50px);
+    max-width: calc(100vw - 20px);
     /* Center the image on the screen */
     margin: auto;
 }
