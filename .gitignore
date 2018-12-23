@@ -1,6 +1,9 @@
 # Created by https://www.gitignore.io/api/node
 
 build/*
+docker_build/
+docker_build.tar.gz
+webpack-build-*
 img/
 ### Node ###
 # Logs

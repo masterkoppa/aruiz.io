@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    personal-web:
+        image: nginx:mainline
+        restart: always
+        volumes:
+            - ./docker_build:/usr/share/nginx/html/
+        environment:
+            VIRTUAL_HOST: aruiz.io, www.aruiz.io, andresjruiz.com, www.andresjruiz.com
+            LETSENCRYPT_HOST: aruiz.io, www.aruiz.io, andresjruiz.com, www.andresjruiz.com
+        env_file:
+            - .env
+
+networks:
+    default:
+        external:
+            name: webproxy
