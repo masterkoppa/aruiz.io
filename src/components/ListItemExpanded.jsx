@@ -1,9 +1,11 @@
 import React from 'react';
-import {render} from 'react-dom';
-import muiThemeable from 'material-ui/styles/muiThemeable';
-import {fade} from 'material-ui/utils/colorManipulator'
-import Paper from 'material-ui/Paper';
+import Paper from '@material-ui/core/Paper';
 import Image from './ImageWithLB.jsx';
+
+import { Typography } from '@material-ui/core';
+
+import { withStyles } from '@material-ui/core/styles';
+
 
 const readMarkdown = (component) => {
     switch(component) {
@@ -13,8 +15,6 @@ const readMarkdown = (component) => {
             return {__html: `${require('../md_docs/embedded.md')}`};
         case 3:
             return {__html: `${require('../md_docs/desktop.md')}`};
-        case 4:
-            return {__html: "<h1>Mobile</h1>"};
     }
 }
 
@@ -33,24 +33,29 @@ const additionalContent = ({component, muiTheme}) => {
     }
 }
 
+const styles = (theme) => ({
+    root: {
+        // Make the Paper pane match the selected style, to fake a vertical tab bar look
+        backgroundColor: theme.palette.action.selected
+    },
+});
+
 
 const ListItemExpanded = (props) => {
-    let itemStyle = {
-        backgroundColor: fade(props.muiTheme.palette.textColor, 0.2)
-    };
-
     return (
         <Paper
-            zDepth={0}
-            rounded={false}
+            elevation={0}
+            square={true}
+            classes={{
+                root: props.classes.root,
+            }}
             className="list-item-expanded"
-            style={itemStyle}
         >
-            <p dangerouslySetInnerHTML={readMarkdown(props.component)}></p>
+            <Typography variant="body1" dangerouslySetInnerHTML={readMarkdown(props.component)}/>
             {additionalContent(props)}
         </Paper>
     );
 
 };
 
-export default muiThemeable()(ListItemExpanded);
+export default withStyles(styles)(ListItemExpanded);

@@ -1,34 +1,50 @@
-import React from 'react';
-import Paper from 'material-ui/Paper';
-import {List, ListItem, makeSelectable} from 'material-ui/List';
+import React, { PureComponent } from 'react';
+
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
+
 import ExpandedItem from './components/ListItemExpanded.jsx';
 
-
-const SelectableList = makeSelectable(List);
-
-export default class DevSection extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            selected: 1
-        }
-    }
+export default class DevSection extends PureComponent {
+    state = {
+        selected: 1,
+    };
 
     render() {
         let {selected} = this.state;
         // TODO Change the color of this card to a complementary color
         return (
-            <Paper className="section dev-section" zDepth={5}>
-                <h2>The Developer</h2>
+            <Paper className="section dev-section" elevation={5}>
+                <Typography variant="title">The Developer</Typography>
                 <div className="dev-split">
                     <div className="left-bar">
-                        <SelectableList value={selected}>
-                            <ListItem primaryText="Web" value={1} onClick={() => this.setState({selected: 1})}/>
-                            <ListItem primaryText="Embeded" value={2} onClick={() => this.setState({selected: 2})}/>
-                            <ListItem primaryText="Desktop" value={3} onClick={() => this.setState({selected: 3})}/>
-                            {/* <ListItem primaryText="Mobile" value={4} onClick={() => this.setState({selected: 4})}/> */}
-                        </SelectableList>
+                        <List value={selected}>
+                            <ListItem
+                                button
+                                selected={selected === 1}
+                                onClick={() => this.setState({selected: 1})}
+                            >
+                                <ListItemText primary="Web"/>
+                            </ListItem>
+                            <ListItem
+                                button
+                                selected={selected === 2}
+                                onClick={() => this.setState({selected: 2})}
+                            >
+                                <ListItemText primary="Embeded"/>
+                            </ListItem>
+                            <ListItem
+                                button
+                                selected={selected == 3}
+                                onClick={() => this.setState({selected: 3})}
+                            >
+                                <ListItemText primary="Desktop"/>
+                            </ListItem>
+                        </List>
                     </div>
                     <ExpandedItem component={selected}/>
                 </div>

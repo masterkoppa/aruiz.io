@@ -1,23 +1,20 @@
 import React from 'react';
-import {unmountComponentAtNode} from 'react-dom';
-import muiThemeable from 'material-ui/styles/muiThemeable';
-import {fade} from 'material-ui/utils/colorManipulator'
+import Modal from '@material-ui/core/Modal';
+import Paper from '@material-ui/core/Paper';
 
-
-const Lightbox = ({muiTheme, imgSrc}) => {
-
-    let scrimStyle = {
-        backgroundColor: muiTheme.palette.secondaryTextColor
-    };
-
+function Lightbox({ onClose, img }) {
     return (
-        <div className="lightbox" style={scrimStyle} onClick={() => {
-            unmountComponentAtNode(document.getElementById('modal'));
-        }}>
-            <img src={imgSrc} />
-        </div>
+        <Modal
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={true}
+          onClose={onClose}
+        >
+            <Paper onClick={onClose} className="lightbox-container">
+                <img className="lightbox-image" src={img} />
+            </Paper>
+        </Modal>
     )
-};
-
+}
 
 export default Lightbox;

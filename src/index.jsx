@@ -1,15 +1,12 @@
-
-
-// import dragscroll from 'dragscroll';
-
-import React from 'react';
-import {render} from 'react-dom';
-import Header from './header.jsx';
+import React, { PureComponent } from 'react';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-// import DevSection from './dev.jsx';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { render } from 'react-dom';
+
+import Header from './header.jsx';
+import DevSection from './dev.jsx';
 // import {blueGrey500, lightGreen500} from 'material-ui/styles/colors'
 // import PhotoSection from './photographer.jsx';
 // import TravelSection from './travel.jsx';
@@ -18,16 +15,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 const theme = createMuiTheme({
     palette: {
         type: "dark",
-        // primary: {
-        //     main: "#311b92",
-        // },
-        // secondary: {
-        //     main: '#3d5afe',
-        // },
+        primary: {
+            main: "#311b92",
+        },
+        secondary: {
+            main: '#3d5afe',
+        },
     },
 });
 
-export default class App extends React.Component {
+export default class App extends PureComponent {
     render() {
         /* TODO: Tie this theme color to a toggle */
         return (
@@ -35,7 +32,7 @@ export default class App extends React.Component {
                 <CssBaseline/>
                 <div>
                     <Header/>
-                    {/* <DevSection/> */}
+                    <DevSection/>
                     {/* <PhotoSection/> */}
                     {/* <TravelSection/> */}
                 </div>
