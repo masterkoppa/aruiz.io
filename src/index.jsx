@@ -7,9 +7,8 @@ import { render } from 'react-dom';
 
 import Header from './header.jsx';
 import DevSection from './dev.jsx';
-// import {blueGrey500, lightGreen500} from 'material-ui/styles/colors'
-// import PhotoSection from './photographer.jsx';
-// import TravelSection from './travel.jsx';
+import PhotoSection from './photographer.jsx';
+import TravelSection from './travel.jsx';
 
 
 const theme = createMuiTheme({
@@ -33,14 +32,16 @@ export default class App extends PureComponent {
                 <div>
                     <Header/>
                     <DevSection/>
-                    {/* <PhotoSection/> */}
-                    {/* <TravelSection/> */}
+                    <PhotoSection/>
+                    <TravelSection/>
                 </div>
             </MuiThemeProvider>
         );
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    render(<App/>, document.getElementById('app'));
-}, false);
+if (typeof window !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+        render(<App/>, document.getElementById('app'));
+    }, false);
+}

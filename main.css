@@ -92,10 +92,14 @@ only screen and (                min-resolution: 2dppx) {
     flex-wrap: no-wrap;
     overflow-x: auto;
     margin-bottom: 4px;
+
+    scroll-snap-type: x mandatory;
 }
 
 .image-row > * {
     margin-left: 4px;
+
+    scroll-snap-align: start;
 }
 
 .lightbox-container {

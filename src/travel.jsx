@@ -1,11 +1,11 @@
-import React from 'react';
-import Paper from 'material-ui/Paper';
-import Avatar from 'material-ui/Avatar';
+import React, { PureComponent } from 'react';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+
 import Image from './components/ImageWithLB.jsx';
 
-export default class TravelSection extends React.Component {
+export default class TravelSection extends PureComponent {
     render() {
-
         let images = [
             "https://photos.smugmug.com/photos/i-59ZrVbv/2/X2/i-59ZrVbv-X2.jpg",
             "https://photos.smugmug.com/photos/i-7CvgCQK/2/X2/i-7CvgCQK-X2.jpg",
@@ -19,16 +19,17 @@ export default class TravelSection extends React.Component {
         });
 
         return (
-            <Paper className="section photo-section" zDepth={5}>
-                <h2>The Traveler</h2>
-                <p>
+            <Paper className="section photo-section" elevation={5}>
+                <Typography variant="title">The Traveler</Typography>
+                <Typography variant="body1">
                     I've been lucky early in my life and have gotten the chance
                     to travel to some amazing places and experience some of the
                     great things this world has to offer.
-                </p><p>
+                </Typography>
+                <Typography variant="body1">
                     Bellow is a small selection of photos from my adventures.
-                </p>
-                <div className="image-row dragscroll">
+                </Typography>
+                <div className="image-row">
                     {images}
                 </div>
             </Paper>

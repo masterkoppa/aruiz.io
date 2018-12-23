@@ -1,6 +1,7 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
-import Avatar from 'material-ui/Avatar';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+
 import Image from './components/ImageWithLB.jsx';
 
 export default class PhotographerSection extends React.Component {
@@ -18,23 +19,25 @@ export default class PhotographerSection extends React.Component {
         });
 
         return (
-            <Paper className="section photo-section" zDepth={5}>
-                <h2>The Photographer</h2>
-                <p>
+            <Paper className="section photo-section" elevation={5}>
+                <Typography variant="title">The Photographer</Typography>
+                <Typography variant="body1">
                     I consider myself to be an amateur photographer. I love exploring
                     places both near and far for good shots. Most of my work is
                     Landscape, but I ocassionally do some portraits and wildlife
                     photography as well.
-                </p><p>
+                </Typography>
+                <Typography variant="body1">
                     My main camera is currently a Sony A7R. The Sony 24-240mm is
                     main main lens because of how flexible it is, but I like shooting
                     with the Sony 55mm F/1.8 and Sony 28mm F/2.0 as well.
-                </p><p>
+                </Typography>
+                <Typography variant="body1">
                     Bellow is a small selection of my favorite shots, you can check
                     out some more <a href="https://masterkoppa.smugmug.com/">here</a>.
-                </p>
+                </Typography>
 
-                <div className="image-row dragscroll">
+                <div className="image-row">
                     {images}
                 </div>
             </Paper>
